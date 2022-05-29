@@ -39,9 +39,7 @@ jobs:
     runs-on: ubuntu-20.04
 
     steps:
-    
-    - name: Setup Debug Session
-      uses: csexton/debugger-action@master
+
 
     - name: Checkout
       uses: actions/checkout@main
@@ -99,6 +97,10 @@ jobs:
       env:
         TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        
+    - name: Setup Debug Session
+      uses: csexton/debugger-action@master
+
 
     - name: Download package
       id: package
